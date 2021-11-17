@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MedicalManagment
+namespace MedicalManagment.Views.User
 {
-    public partial class frmLogin : Form
+    public partial class frmUser : MetroForm
     {
-        public frmLogin()
+        public frmUser()
         {
             InitializeComponent();
         }
