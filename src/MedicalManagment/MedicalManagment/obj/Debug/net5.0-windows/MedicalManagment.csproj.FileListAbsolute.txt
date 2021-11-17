@@ -20,3 +20,14 @@ C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\o
 C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.pdb
 C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.genruntimeconfig.cache
 C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.frmMain.resources
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\MedicalManagment.dll.config
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.Auth.frmLogin.resources
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.Account.frmClient.resources
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.Invoice.frmInvoice.resources
+C:\Users\jgervacio\Documents\GitHub\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.User.frmUser.resources

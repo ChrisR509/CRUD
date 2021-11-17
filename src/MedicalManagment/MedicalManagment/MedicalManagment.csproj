@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="MetroFramework" Version="1.2.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +22,6 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Auth\" />
   </ItemGroup>
 
 </Project>

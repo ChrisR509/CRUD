@@ -1,15 +1,13 @@
-﻿using MedicalManagment.Abstracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalManagment.Models
+namespace MedicalManagment.Abstracts
 {
-    public class Client : IEntity, IAudit
+    public interface IAudit
     {
-        public Guid Id { get; set; }
         public bool IsCreated { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }

@@ -1,21 +1,21 @@
-﻿using MetroFramework.Forms;
+﻿using MedicalManagment.Controllers;
+using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MedicalManagment.Views.User
 {
     public partial class frmUser : MetroForm
     {
+        private readonly UserController userController;
         public frmUser()
         {
             InitializeComponent();
+            userController = new UserController();
+        }
+
+        private async void frmUser_Load(object sender, EventArgs e)
+        {
+            var allUsers = await userController.GetAll();
         }
     }
 }
