@@ -1,5 +1,4 @@
-﻿
-namespace MedicalManagment
+﻿namespace MedicalManagment.Views
 {
     partial class frmMain
     {
