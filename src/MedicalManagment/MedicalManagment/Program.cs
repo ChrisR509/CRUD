@@ -1,3 +1,4 @@
+using MedicalManagment.Views;
 using MedicalManagment.Views.Auth;
 using System;
 using System.Windows.Forms;

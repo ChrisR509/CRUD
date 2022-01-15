@@ -15,11 +15,15 @@ namespace MedicalManagment.Repository
 
         }
 
+        public async ValueTask<User> GetUserAsync(string userName)
+        {
+            var result = await GetAsync(u => u.UserName == userName, "sp_GetUser");
+            return result;
+        }
+
         public async ValueTask<IEnumerable<User>> GetUsers()
         {
-            await OpenConnection();
             var result = await All;
-            await CloseConnection();
             return result;
         }
 

@@ -1,31 +1,40 @@
 ﻿using MedicalManagment.Abstracts;
-using MedicalManagment.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using Dapper;
+using System.Data.SqlClient;
 
 namespace MedicalManagment.Repository
 {
-    public class BaseRepository<T> : IRepository<T>, IConnection where T : class
+    public class BaseRepository<T> : IRepository<T> where T : class
     {
         public ValueTask<IQueryable<T>> All { get; set; }
-
-        private static readonly MedicalManagmentContext _context = new MedicalManagmentContext();
-        private readonly SqlConnection _connection = new SqlConnection(connectionString: _context.ConnectionString);
+        private string connString = ConfigurationManager.ConnectionStrings["MedicalConnection"].ToString();
         public BaseRepository(string query)
         {
             All = ReadAllRecord(query);
         }
-        public async Task CloseConnection() => await _connection.CloseAsync();
 
         public async ValueTask<bool> CreateAsync(T entity, string query)
         {
-            throw new NotImplementedException();
+            using var conn = new SqlConnection(connString);
+            return await conn.ExecuteAsync(sql: query, param: entity, commandType: CommandType.StoredProcedure) > 0;
+        }
+        public async ValueTask<bool> CreateAsync(object entity, string query)
+        {
+            using var conn = new SqlConnection(connString);
+            return await conn.ExecuteAsync(sql: query, param: entity, commandType: CommandType.StoredProcedure) > 0;
+        }
+
+        public async ValueTask<bool> CreateAsync( string query)
+        {
+            using var conn = new SqlConnection(connString);
+            return await conn.ExecuteAsync(sql: query, commandType: CommandType.Text) > 0;
         }
 
         public async ValueTask<bool> DeleteAsync(T entity, string query)
@@ -33,46 +42,41 @@ namespace MedicalManagment.Repository
             throw new NotImplementedException();
         }
 
-        public async ValueTask<IQueryable<T>> GetAsync(Expression<Func<T, bool>> predicate, string query)
+        public async ValueTask<T> GetAsync(Func<T, bool> predicate, string query)
         {
-            using var command = new SqlCommand(query, _connection);
-            command.CommandType = CommandType.StoredProcedure;
-            var reader = command.ExecuteReaderAsync();
-            var mapT = await MapToValueOfT(reader);
-            return mapT.Where(predicate);
+            using var conn = new SqlConnection(connString);
+            var entity = await conn.QueryAsync<T>(query);
+            return entity.FirstOrDefault(predicate);
         }
-
-        public async Task OpenConnection() => await _connection.OpenAsync();
 
         public async ValueTask<bool> UpdateAsync(T entity, string query)
         {
             throw new NotImplementedException();
         }
-        private ValueTask<IQueryable<T>> ReadAllRecord(string query)
+        private async ValueTask<IQueryable<T>> ReadAllRecord(string query)
         {
-            using var command = new SqlCommand(query, _connection);
-            command.CommandType = CommandType.StoredProcedure;
-            var reader = command.ExecuteReaderAsync();
-            return MapToValueOfT(reader);
+            using var conn = new SqlConnection(connString);
+            var entity = await conn.QueryAsync<T>(query);
+            return entity.AsQueryable();
         }
 
-        private async ValueTask<IQueryable<T>> MapToValueOfT(Task<SqlDataReader> reader)
-        {
-            var result = new List<T>();
-            var reading = await reader;
-            while (await reading.ReadAsync())
-            {
-                var item = Activator.CreateInstance<T>();
-                foreach (var property in typeof(T).GetProperties())
-                {
-                    if (!reading.IsDBNull(reading.GetOrdinal(property.Name)))
-                    {
-                        Type convertTo = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
-                        property.SetValue(item, Convert.ChangeType(reading[property.Name], convertTo), null);
-                    }
-                }
-            }
-            return result.AsQueryable();
-        }
+        //private async ValueTask<IQueryable<T>> MapToValueOfT(SqlDataReader reader)
+        //{
+        //    var result = new List<T>();
+        //    var reading = reader;
+        //    while (await reading.ReadAsync())
+        //    {
+        //        var item = Activator.CreateInstance<T>();
+        //        foreach (var property in typeof(T).GetProperties())
+        //        {
+        //            if (!reading.IsDBNull(reading.GetOrdinal(property.Name)))
+        //            {
+        //                Type convertTo = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+        //                property.SetValue(item, Convert.ChangeType(reading[property.Name], convertTo), null);
+        //            }
+        //        }
+        //    }
+        //    return result.AsQueryable();
+        //}
     }
 }

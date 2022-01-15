@@ -10,8 +10,10 @@ namespace MedicalManagment.Abstracts
     public interface IRepository<T> where T : class
     {
         public ValueTask<IQueryable<T>> All { get; set; }
-        public ValueTask<IQueryable<T>> GetAsync(Expression<Func<T, bool>> predicate, string query);
+        public ValueTask<T> GetAsync(Func<T, bool> predicate, string query);
         public ValueTask<bool> CreateAsync(T entity, string query);
+        public ValueTask<bool> CreateAsync(object entity, string query);
+        public ValueTask<bool> CreateAsync(string query);
         public ValueTask<bool> UpdateAsync(T entity, string query);
         public ValueTask<bool> DeleteAsync(T entity, string query);
     }

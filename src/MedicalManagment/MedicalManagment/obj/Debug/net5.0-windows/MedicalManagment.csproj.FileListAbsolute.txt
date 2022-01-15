@@ -61,3 +61,9 @@ D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-win
 D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.pdb
 D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.genruntimeconfig.cache
 D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.frmMain.resources
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Properties.Resources.resources
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\bin\Debug\net5.0-windows\Dapper.dll
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.frmClients.resources
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.frmRoles.resources
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.frmUsers.resources
+D:\Data\Projects\CRUD\src\MedicalManagment\MedicalManagment\obj\Debug\net5.0-windows\MedicalManagment.Views.Roles.frmAddRole.resources

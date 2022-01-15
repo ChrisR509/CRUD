@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ce1a209e-937f-4401-a725-b4a3c2c9f51d": {
+      "ProjectGuid": "ce1a209e-937f-4401-a725-b4a3c2c9f51d",
+      "DisplayName": "MedicalManagment",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

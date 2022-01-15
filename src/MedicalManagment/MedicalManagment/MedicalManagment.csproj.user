@@ -5,7 +5,19 @@
     <Compile Update="Views\Auth\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\frmClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Roles\frmAddRole.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

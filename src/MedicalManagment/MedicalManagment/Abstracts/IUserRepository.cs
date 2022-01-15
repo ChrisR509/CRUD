@@ -10,5 +10,6 @@ namespace MedicalManagment.Abstracts
     public interface IUserRepository : IRepository<User>
     {
         public ValueTask<IEnumerable<User>> GetUsers();
+        public ValueTask<User> GetUserAsync(string userName);
     }
 }
